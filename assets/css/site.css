@@ -1,0 +1,6 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.navbar-brand { letter-spacing: 0.2px; }
+.page-title { margin-top: 2rem; margin-bottom: 1rem; }
+.section { margin: 2rem 0; }
+.muted { color: #6b7280; }
+.project-card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; }
