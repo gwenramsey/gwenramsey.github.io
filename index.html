@@ -1,149 +1,137 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2867
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fswiss\fcharset0 Arial-BoldMT;\f2\fswiss\fcharset0 ArialMT;
-\f3\fnil\fcharset0 Georgia;\f4\fswiss\fcharset0 Arial-ItalicMT;\f5\fnil\fcharset128 HiraginoSans-W6;
-}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red167\green80\blue52;
-\red17\green26\blue23;\red245\green243\blue235;\red54\green69\blue60;\red66\green81\blue72;\red228\green232\blue225;
-\red212\green226\blue215;\red49\green74\blue51;\red208\green184\blue149;\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c71765\c39216\c26275;
-\cssrgb\c8235\c13333\c11765;\cssrgb\c96863\c96078\c93725;\cssrgb\c27451\c33725\c30196;\cssrgb\c32549\c38824\c35294;\cssrgb\c91373\c92549\c90588;
-\cssrgb\c86275\c90588\c87451;\cssrgb\c24706\c35686\c25882;\cssrgb\c85098\c76863\c65098;\cssrgb\c100000\c100000\c100000\c65882;}
-{\info
-{\doccomm GIS and remote sensing portfolio of Gwen Ramsey.}}\margl1440\margr1440\vieww8020\viewh4180\viewkind0
-\deftab720
-{\*\background {\shp{\*\shpinst\shpleft0\shptop0\shpright0\shpbottom0\shpfhdr0\shpbxmargin\shpbymargin\shpwr0\shpwrk0\shpfblwtxt1\shpz0\shplid1025{\sp{\sn shapeType}{\sv 1}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn fillColor}{\sv 15463413}}{\sp{\sn fFilled}{\sv 1}}{\sp{\sn lineWidth}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn bWMode}{\sv 9}}{\sp{\sn fBackground}{\sv 1}}}}}
-\pard\pardeftab720\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GIS and remote sensing portfolio of Gwen Ramsey.">
+  <title>Gwen Ramsey | GIS Portfolio</title>
+  <style>
+    :root { --ink:#15221e; --paper:#f7f5ef; --moss:#3f5b42; --sage:#afba99; --mist:#dce7df; --clay:#b76443; --line:rgba(21,34,30,.16); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; }
+    a { color:inherit; }
+    .wrap { width:min(1160px, calc(100% - 48px)); margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; }
+    .brand { font-weight:700; text-decoration:none; }
+    .nav-links { display:flex; gap:24px; }
+    .nav-links a { text-decoration:none; opacity:.75; }
+    .nav-links a:hover { opacity:1; }
+    .hero { min-height:730px; color:#fff; position:relative; overflow:hidden; display:grid; align-items:end; }
+    .hero::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,20,16,.76) 0%, rgba(10,20,16,.35) 53%, rgba(10,20,16,.12)), url('assets/santa-cruz-fieldwork.jpg') center 58% / cover; }
+    .hero .wrap { position:relative; padding:0 0 80px; }
+    .eyebrow { font-size:.79rem; letter-spacing:.14em; font-weight:700; text-transform:uppercase; }
+    h1 { max-width:800px; margin:14px 0 18px; font-family:Georgia, 'Times New Roman', serif; font-size:clamp(3.8rem, 9vw, 7.9rem); line-height:.88; font-weight:400; letter-spacing:-.065em; }
+    .hero p { max-width:540px; margin:0; font-size:1.13rem; }
+    .jump { display:inline-block; margin-top:32px; font-size:.84rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.75); padding-bottom:5px; }
+    section { padding:112px 0; }
+    .intro { background:var(--ink); color:var(--paper); }
+    .section-label { font-size:.75rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--clay); }
+    .intro-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:80px; }
+    .intro h2, .project-copy h2, .methods h2, .contact h2 { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(2.5rem,5vw,4.5rem); line-height:.95; letter-spacing:-.05em; font-weight:400; margin:0; }
+    .intro-copy { font-size:1.25rem; max-width:660px; }
+    .intro-copy p:first-child { margin-top:0; }
+    .project-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:34px; }
+    .project-heading p { max-width:330px; margin:0; color:#46564d; }
+    .hero-map { width:100%; display:block; border:1px solid var(--line); }
+    .caption { margin:12px 0 0; font-size:.83rem; color:#53635a; }
+    .project-copy { display:grid; grid-template-columns:1fr 1fr; gap:70px; padding-top:74px; }
+    .project-copy h2 { font-size:clamp(2.7rem,5.4vw,5.1rem); }
+    .project-copy p { font-size:1.1rem; margin:0 0 20px; }
+    .project-copy .detail { padding-top:8px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+    .tags span { padding:7px 10px; border:1px solid var(--line); border-radius:999px; font-size:.79rem; }
+    .maps { display:grid; grid-template-columns:1fr 1fr; gap:42px 28px; padding-top:84px; }
+    .map-card { margin:0; }
+    .map-card img { display:block; width:100%; background:#e9ece7; border:1px solid var(--line); transition:transform .25s ease, box-shadow .25s ease; }
+    .map-card:hover img { transform:translateY(-4px); box-shadow:0 16px 32px rgba(21,34,30,.12); }
+    .map-card figcaption { padding-top:12px; font-size:.92rem; font-weight:700; }
+    .methods { background:var(--mist); }
+    .method-grid { display:grid; grid-template-columns:.7fr 1.3fr; gap:70px; align-items:start; }
+    .method-grid h2 { font-size:clamp(2.7rem,5vw,4.6rem); }
+    .method-list { border-top:1px solid var(--line); }
+    .method { padding:22px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:120px 1fr; gap:24px; }
+    .method strong { text-transform:uppercase; letter-spacing:.08em; font-size:.77rem; color:var(--moss); }
+    .method p { margin:0; font-size:1.03rem; }
+    .contact { background:var(--moss); color:white; }
+    .contact-inner { display:flex; justify-content:space-between; gap:40px; align-items:end; }
+    .contact h2 { max-width:610px; }
+    .contact a { text-decoration:none; font-weight:700; border-bottom:1px solid rgba(255,255,255,.8); padding-bottom:6px; }
+    footer { background:var(--moss); color:rgba(255,255,255,.66); padding:0 0 28px; font-size:.79rem; }
+    @media (max-width:760px) { .wrap { width:min(100% - 32px, 1160px); } .nav-links { gap:14px; font-size:.72rem; } .hero { min-height:650px; } .hero .wrap { padding-bottom:52px; } section { padding:76px 0; } .intro-grid, .project-copy, .method-grid { grid-template-columns:1fr; gap:32px; } .project-heading, .contact-inner { display:block; } .project-heading p { margin-top:18px; } .maps { grid-template-columns:1fr; padding-top:52px; } .method { grid-template-columns:1fr; gap:6px; } .contact a { display:inline-block; margin-top:30px; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="wrap">
+      <a class="brand" href="#top">Gwen Ramsey</a>
+      <div class="nav-links"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Connect</a></div>
+    </nav>
+    <div class="wrap" id="top">
+      <div class="eyebrow">GIS · Remote sensing · Environmental research</div>
+      <h1>Mapping change<br>across living landscapes.</h1>
+      <p>I use GIS, field observations, and spatial analysis to understand how environmental change shapes ecosystems and the people who depend on them.</p>
+      <a class="jump" href="#work">Explore selected work ↓</a>
+    </div>
+  </header>
 
-\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 <!DOCTYPE html>
-\f1\b\fs20\fsmilli10320 \AppleTypeServices\AppleTypeServicesF65539 \cf3 \strokec3 \
-\pard\pardeftab720\partightenfactor0
-\cf3 GWEN RAMSEY\
-\pard\pardeftab720\partightenfactor0
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <div><div class="section-label">About</div></div>
+      <div class="intro-copy">
+        <p>I am a geospatial researcher with a background in anthropology, geography, environmental science, and GIS. My work connects field-based ecological questions with spatial data, remote sensing, and clear visual communication.</p>
+        <p>I am especially interested in the ways climate, disturbance, and land management shape habitat and human-environment relationships.</p>
+      </div>
+    </div>
+  </section>
 
-\f2\b0 \AppleTypeServices\AppleTypeServicesF65539 \cf3 \strokec3 WORK\
-APPROACH\
-CONNECT\
-\pard\pardeftab720\partightenfactor0
+  <main id="work">
+    <section>
+      <div class="wrap">
+        <div class="project-heading">
+          <div>
+            <div class="section-label">Selected project · Spring 2026</div>
+          </div>
+          <p>Climate-driven habitat analysis for two endemic Channel Islands mammals.</p>
+        </div>
+        <img class="hero-map" src="assets/current-suitability.jpg" alt="Current MaxEnt-predicted habitat suitability for island fox and island spotted skunk across the Channel Islands.">
+        <p class="caption">Current MaxEnt-predicted habitat suitability and geographic overlap for island fox and island spotted skunk.</p>
+        <div class="project-copy">
+          <h2>Climate-driven range analysis of Channel Islands mammals.</h2>
+          <div class="detail">
+            <p>For this project, I modeled present and future habitat suitability for the island fox (<em>Urocyon littoralis</em>) and island spotted skunk (<em>Spilogale gracilis amphiala</em>) across the Channel Islands. These isolated ecosystems are highly endemic and shaped by varied terrain, a Mediterranean climate, and increasing environmental change.</p>
+            <p>Using MaxEnt, I mapped current habitat suitability and projected how it may change under a business-as-usual warming scenario of 2.5–3°C by 2070 and 2100. I also evaluated the short-term effects of the May 2026 Santa Rosa Island Fire by comparing pre- and post-fire NDVI in the models.</p>
+            <p>The analysis showed that the two species may respond differently to future conditions despite overlapping geographic ranges. It also suggested that the short-term vegetation loss from the fire had less influence on predicted suitability than the broader climate, land-cover, vegetation-structure, and topographic conditions included in the model.</p>
+            <div class="tags"><span>MaxEnt</span><span>ArcGIS Pro</span><span>NDVI</span><span>Habitat suitability</span><span>Climate scenarios</span></div>
+          </div>
+        </div>
+        <div class="maps">
+          <figure class="map-card"><img src="assets/fire-impact.jpg" alt="Comparison of pre- and post-fire NDVI and habitat suitability on Santa Rosa Island."><figcaption>Santa Rosa Island fire impacts · May 2026</figcaption></figure>
+          <figure class="map-card"><img src="assets/forecast-2070.jpg" alt="Projected habitat suitability change by 2070 for island fox and island spotted skunk."><figcaption>Projected change by 2070 · 2.5–3°C warming</figcaption></figure>
+          <figure class="map-card"><img src="assets/forecast-2100.jpg" alt="Projected habitat suitability change by 2100 for island fox and island spotted skunk."><figcaption>Projected change by 2100 · 2.5–3°C warming</figcaption></figure>
+          <figure class="map-card"><img src="assets/santa-cruz-fieldwork.jpg" alt="Two field researchers standing in spring wildflowers on Santa Cruz Island."><figcaption>Santa Cruz Island field visit · Spring 2026</figcaption></figure>
+        </div>
+      </div>
+    </section>
 
-\f1\b\fs19 \AppleTypeServices\AppleTypeServicesF65539 \cf3 GIS \'b7 REMOTE SENSING \'b7 ENVIRONMENTAL RESEARCH\
-\pard\pardeftab720\sa360\partightenfactor0
+    <section class="methods" id="approach">
+      <div class="wrap method-grid">
+        <div><div class="section-label">Approach</div><h2>Spatial work grounded in place.</h2></div>
+        <div class="method-list">
+          <div class="method"><strong>01 · Field</strong><p>Collecting and interpreting observations with attention to local ecology, terrain, and the practical realities behind a dataset.</p></div>
+          <div class="method"><strong>02 · Analyze</strong><p>Using GIS, remote sensing, and spatial modeling to turn complex environmental patterns into defensible findings.</p></div>
+          <div class="method"><strong>03 · Communicate</strong><p>Designing maps and visuals that make research legible to collaborators, decision-makers, and broader audiences.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-\f3\b0\fs144 \AppleTypeServices \cf3 Mapping change\uc0\u8232 across living landscapes.\
-\pard\pardeftab720\partightenfactor0
-
-\f2\fs27\fsmilli13560 \cf3 I use GIS, field observations, and spatial analysis to understand how environmental change shapes ecosystems and the people who depend on them.\
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs20\fsmilli10080 \AppleTypeServices\AppleTypeServicesF65539 \cf3 EXPLORE SELECTED WORK \uc0\u8595 
-\f2\b0\fs24 \AppleTypeServices \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \cb5 \strokec4 ABOUT\cb1 \
-\pard\pardeftab720\sa300\partightenfactor0
-
-\f2\b0\fs30 \AppleTypeServices \cf6 \cb5 \strokec6 I am a geospatial researcher with a background in anthropology, geography, environmental science, and GIS. My work connects field-based ecological questions with spatial data, remote sensing, and clear visual communication.\cb1 \
-\cb5 I am especially interested in the ways climate, disturbance, and land management shape habitat and human-environment relationships.\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \strokec4 SELECTED PROJECT \'b7 SPRING 2026\
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24 \AppleTypeServices \cf7 \strokec7 Climate-driven habitat analysis for two endemic Channel Islands mammals.\
-\pard\pardeftab720\partightenfactor0
-\cf5 \strokec5 {{\NeXTGraphic Attachment.png \width320 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¨}\pard\pardeftab720\partightenfactor0
-\cf5 \
-\pard\pardeftab720\partightenfactor0
-
-\fs20 \cf8 \strokec8 Current MaxEnt-predicted habitat suitability and geographic overlap for island fox and island spotted skunk.\
-\pard\pardeftab720\partightenfactor0
-
-\f3\fs86\fsmilli43200 \cf5 \strokec5 Climate-driven range analysis of Channel Islands mammals.\
-\pard\pardeftab720\sa400\partightenfactor0
-
-\f2\fs26\fsmilli13200 \cf5 For this project, I modeled present and future habitat suitability for the island fox (
-\f4\i Urocyon littoralis
-\f2\i0 ) and island spotted skunk (
-\f4\i Spilogale gracilis amphiala
-\f2\i0 ) across the Channel Islands. These isolated ecosystems are highly endemic and shaped by varied terrain, a Mediterranean climate, and increasing environmental change.\
-Using MaxEnt, I mapped current habitat suitability and projected how it may change under a business-as-usual warming scenario of 2.5\'963\'b0C by 2070 and 2100. I also evaluated the short-term effects of the May 2026 Santa Rosa Island Fire by comparing pre- and post-fire NDVI in the models.\
-The analysis showed that the two species may respond differently to future conditions despite overlapping geographic ranges. It also suggested that the short-term vegetation loss from the fire had less influence on predicted suitability than the broader climate, land-cover, vegetation-structure, and topographic conditions included in the model.\
-\pard\pardeftab720\partightenfactor0
-
-\fs19 \cf5 MaxEnt\
-ArcGIS Pro\
-NDVI\
-Habitat suitability\
-Climate scenarios\
-\pard\pardeftab720\partightenfactor0
-
-\fs24 \cf5 \cb9 {{\NeXTGraphic Attachment.png \width320 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¨}\pard\pardeftab720\partightenfactor0
-\cf5 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs22 \cf5 \cb1 Santa Rosa Island fire impacts \'b7 May 2026\
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24 \cf5 \cb9 {{\NeXTGraphic Attachment.png \width320 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¨}\pard\pardeftab720\partightenfactor0
-\cf5 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs22 \cf5 \cb1 Projected change by 2070 \'b7 2.5\'963\'b0C warming\
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24 \cf5 \cb9 {{\NeXTGraphic Attachment.png \width320 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¨}\pard\pardeftab720\partightenfactor0
-\cf5 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs22 \cf5 \cb1 Projected change by 2100 \'b7 2.5\'963\'b0C warming\
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24 \cf5 \cb9 {{\NeXTGraphic Attachment.png \width320 \height320 \appleattachmentpadding0 \appleembedtype0 \appleaqc
-}¨}\pard\pardeftab720\partightenfactor0
-\cf5 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs22 \cf5 \cb1 Santa Cruz Island field visit \'b7 Spring 2026\
-\pard\pardeftab720\partightenfactor0
-
-\fs18 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \cb10 \strokec4 APPROACH\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f3\b0\fs80 \AppleTypeServices \cf5 \cb10 \strokec5 Spatial work grounded in place.\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18\fsmilli9240 \AppleTypeServices\AppleTypeServicesF65539 \cf11 \cb10 \strokec11 01 \'b7 FIELD\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24\fsmilli12360 \AppleTypeServices \cf5 \cb10 \strokec5 Collecting and interpreting observations with attention to local ecology, terrain, and the practical realities behind a dataset.\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18\fsmilli9240 \AppleTypeServices\AppleTypeServicesF65539 \cf11 \cb10 \strokec11 02 \'b7 ANALYZE\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24\fsmilli12360 \AppleTypeServices \cf5 \cb10 \strokec5 Using GIS, remote sensing, and spatial modeling to turn complex environmental patterns into defensible findings.\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18\fsmilli9240 \AppleTypeServices\AppleTypeServicesF65539 \cf11 \cb10 \strokec11 03 \'b7 COMMUNICATE\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs24\fsmilli12360 \AppleTypeServices \cf5 \cb10 \strokec5 Designing maps and visuals that make research legible to collaborators, decision-makers, and broader audiences.\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\b\fs18 \AppleTypeServices\AppleTypeServicesF65539 \cf12 \cb11 \strokec12 CONNECT\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f3\b0\fs80 \AppleTypeServices \cf3 \cb11 \strokec3 Interested in working together?\cb1 \
-\pard\pardeftab720\partightenfactor0
-{\field{\*\fldinst{HYPERLINK "https://github.com/gwenramsey"}}{\fldrslt 
-\f1\b\fs24 \cf3 \cb11 GitHub 
-\f5 \uc0\u8599 }}
-\f1\b\fs24 \
-\pard\pardeftab720\partightenfactor0
-
-\f2\b0\fs19 \cf13 \cb11 \strokec13 \'a9 2026 Gwen Ramsey \'b7 GIS & environmental research\cb1 \
-}
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <div><div class="section-label" style="color:#d9c4a6">Connect</div><h2>Interested in working together?</h2></div>
+      <a href="https://github.com/gwenramsey" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </section>
+  <footer><div class="wrap">© 2026 Gwen Ramsey · GIS & environmental research</div></footer>
+</body>
+</html>
