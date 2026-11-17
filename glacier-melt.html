@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glacial retreat analysis in Glacier National Park by Gwen Ramsey.">
+  <title>Glacial Retreat | Gwen Ramsey</title>
+  <style>
+    :root { --ink:#15221e; --paper:#f7f5ef; --moss:#3f5b42; --mist:#dce7df; --clay:#b76443; --line:rgba(21,34,30,.16); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; } a { color:inherit; }
+    .wrap { width:min(1120px, calc(100% - 48px)); margin:auto; } nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; } nav a { text-decoration:none; font-weight:700; } nav .back { opacity:.7; font-weight:400; }
+    .hero { min-height:520px; padding:90px 0 72px; color:var(--paper); display:flex; align-items:end; background:linear-gradient(125deg, #12241f 0%, #35574c 60%, #79968c 100%); } .eyebrow { color:#d9c4a6; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    h1, h2 { font-family:Georgia, 'Times New Roman', serif; font-weight:400; letter-spacing:-.05em; line-height:.95; } h1 { max-width:900px; margin:18px 0 26px; font-size:clamp(3.5rem,8vw,7.4rem); } .hero p { max-width:650px; margin:0; font-size:1.2rem; }
+    section { padding:88px 0; } .intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:72px; } .section-label { color:var(--clay); font-size:.76rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; } h2 { margin:0; font-size:clamp(2.7rem,5.5vw,5rem); } .body-copy p { margin:0 0 20px; font-size:1.08rem; }
+    .maps { background:var(--mist); } .map-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; } figure { margin:0; } figure img { display:block; width:100%; border:1px solid var(--line); } figcaption { padding-top:12px; font-weight:700; font-size:.92rem; }
+    .findings { background:var(--moss); color:white; } .findings-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:72px; } .finding { padding:20px 0; border-bottom:1px solid rgba(255,255,255,.25); } .finding:first-child { border-top:1px solid rgba(255,255,255,.25); } .finding b { display:block; color:#d9c4a6; margin-bottom:5px; font-size:.79rem; letter-spacing:.1em; text-transform:uppercase; }
+    footer { padding:30px 0; font-size:.8rem; color:#53635a; } @media(max-width:760px) { .wrap { width:min(100% - 32px,1120px); } .hero { min-height:460px; padding:58px 0; } section { padding:68px 0; } .intro,.findings-grid,.map-grid { grid-template-columns:1fr; gap:34px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap"><nav><a href="index.html">Gwen Ramsey</a><a class="back" href="index.html#projects">← Selected projects</a></nav></div>
+  <header class="hero"><div class="wrap"><div class="eyebrow">Remote sensing · ArcGIS Pro · 2024</div><h1>Measuring glacial retreat in Glacier National Park.</h1><p>Using satellite-derived snow and ice extent to map two decades of glacier loss, from the scale of Agassiz Glacier to the entire park.</p></div></header>
+  <main>
+    <section><div class="wrap intro"><div><div class="section-label">Project overview</div><h2>Change across a warming landscape.</h2></div><div class="body-copy"><p>Glaciers in Glacier National Park have retreated substantially since the Little Ice Age. This project compared glacier extent in 2000 and 2023 using remotely sensed imagery and the Normalized Difference Snow Index (NDSI).</p><p>I mapped change across the park and examined Agassiz Glacier more closely to visualize how rapidly ice area has diminished over the past two decades.</p></div></div></section>
+    <section class="maps"><div class="wrap"><div class="section-label">Mapped change</div><h2>From one glacier to the whole park.</h2><div class="map-grid" style="margin-top:38px;"><figure><img src="assets/agassiz-retreat.jpg" alt="Map of Agassiz Glacier retreat between 2000 and 2023 in Glacier National Park."><figcaption>Agassiz Glacier retreat · 2000–2023</figcaption></figure><figure><img src="assets/glacier-national-park-retreat.jpg" alt="Map of glacier retreat across Glacier National Park between 2000 and 2023."><figcaption>Glacial retreat across Glacier National Park · 2000–2023</figcaption></figure></div></div></section>
+    <section class="findings"><div class="wrap findings-grid"><div><div class="eyebrow">Key findings</div><h2>A shrinking cryosphere.</h2></div><div><div class="finding"><b>Park-wide loss</b>Glaciers across Glacier National Park show widespread retreat between 2000 and 2023.</div><div class="finding"><b>Agassiz Glacier</b>Agassiz Glacier has lost roughly three-quarters of its former area, making it especially vulnerable to continued warming.</div><div class="finding"><b>Climate connection</b>The analysis found that warmer annual temperatures corresponded with greater glacier melt over the study period.</div></div></div></section>
+  </main>
+  <footer><div class="wrap">Hackathon project · 2024 · <a href="index.html">Return to portfolio</a></div></footer>
+</body>
+</html>
