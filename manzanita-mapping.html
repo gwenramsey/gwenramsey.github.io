@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UAV and deep-learning mapping of Morro manzanita in Montaña de Oro State Park by Gwen Ramsey.">
+  <title>Morro Manzanita Mapping | Gwen Ramsey</title>
+  <style>
+    :root { --ink:#15221e; --paper:#f7f5ef; --moss:#3f5b42; --mist:#dce7df; --clay:#b76443; --line:rgba(21,34,30,.16); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; } a { color:inherit; }
+    .wrap { width:min(1120px, calc(100% - 48px)); margin:auto; } nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; } nav a { text-decoration:none; font-weight:700; } nav .back { opacity:.7; font-weight:400; }
+    .hero { min-height:520px; padding:90px 0 72px; color:var(--paper); display:flex; align-items:end; background:linear-gradient(125deg, #12241f 0%, #35574c 60%, #79968c 100%); } .eyebrow { color:#d9c4a6; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    h1, h2 { font-family:Georgia, 'Times New Roman', serif; font-weight:400; letter-spacing:-.05em; line-height:.95; } h1 { max-width:900px; margin:18px 0 26px; font-size:clamp(3.5rem,8vw,7.4rem); } .hero p { max-width:650px; margin:0; font-size:1.2rem; }
+    section { padding:88px 0; } .intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:72px; } .section-label { color:var(--clay); font-size:.76rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; } h2 { margin:0; font-size:clamp(2.7rem,5.5vw,5rem); } .body-copy p { margin:0 0 20px; font-size:1.08rem; }
+    .maps { background:var(--mist); } .map-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; } figure { margin:0; } figure img { display:block; width:100%; border:1px solid var(--line); } figcaption { padding-top:12px; font-weight:700; font-size:.92rem; }
+    .findings { background:var(--moss); color:white; } .findings-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:72px; } .finding { padding:20px 0; border-bottom:1px solid rgba(255,255,255,.25); } .finding:first-child { border-top:1px solid rgba(255,255,255,.25); } .finding b { display:block; color:#d9c4a6; margin-bottom:5px; font-size:.79rem; letter-spacing:.1em; text-transform:uppercase; }
+    footer { padding:30px 0; font-size:.8rem; color:#53635a; } @media(max-width:760px) { .wrap { width:min(100% - 32px,1120px); } .hero { min-height:460px; padding:58px 0; } section { padding:68px 0; } .intro,.findings-grid,.map-grid { grid-template-columns:1fr; gap:34px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap"><nav><a href="index.html">Gwen Ramsey</a><a class="back" href="index.html#projects">← Selected projects</a></nav></div>
+  <header class="hero"><div class="wrap"><div class="eyebrow">UAV remote sensing · ArcGIS Pro · Deep learning · 2026</div><h1>Mapping threatened Morro manzanita from the air.</h1><p>Testing whether drone imagery, image segmentation, and deep learning can identify shrub-dominated vegetation patterns in Montaña de Oro State Park.</p></div></header>
+  <main>
+    <section><div class="wrap intro"><div><div class="section-label">Project overview</div><h2>A rare shrub in a complex coastal landscape.</h2></div><div class="body-copy"><p>Morro manzanita (<em>Arctostaphylos morroensis</em>) is a threatened plant found along California’s Central Coast. This project focused on a dense shrubland study site in Montaña de Oro State Park near Los Osos.</p><p>I used UAV imagery and ArcGIS Pro to test image segmentation and deep-learning workflows for distinguishing manzanita from surrounding chaparral vegetation.</p></div></div></section>
+    <section class="maps"><div class="wrap"><div class="section-label">Study area &amp; analysis</div><h2>From field imagery to classified vegetation.</h2><div class="map-grid" style="margin-top:38px;"><figure><img src="assets/manzanita-study-area.png" alt="Map of the Morro manzanita study site in Montaña de Oro State Park, Los Osos, California."><figcaption>Morro manzanita study site · Montaña de Oro State Park</figcaption></figure><figure><img src="assets/manzanita-segmentation-results.png" alt="Vegetation classification results from image segmentation and drone imagery."><figcaption>Segmented vegetation classification from drone imagery</figcaption></figure></div></div></section>
+    <section><div class="wrap intro"><div><div class="section-label">Image interpretation</div><h2>Why species-level mapping is hard.</h2></div><figure><img src="assets/manzanita-drone-imagery.png" alt="Annotated drone imagery showing visually similar manzanita, chamise, and oak vegetation."><figcaption>Drone imagery illustrates the visual overlap among shrub and tree species.</figcaption></figure></div></section>
+    <section class="findings"><div class="wrap findings-grid"><div><div class="eyebrow">Key takeaway</div><h2>A promising workflow with limits.</h2></div><div><div class="finding"><b>What worked</b>UAV imagery and segmentation effectively captured general shrub-dominated vegetation patterns.</div><div class="finding"><b>Challenge</b>RGB imagery alone made species-level separation difficult where manzanita closely resembled nearby chaparral.</div><div class="finding"><b>Next step</b>The workflow provides a foundation for more accurate, ground-validated monitoring of Morro manzanita stands.</div></div></div></section>
+  </main>
+  <footer><div class="wrap">NR 418 project · Winter 2026 · <a href="index.html">Return to portfolio</a></div></footer>
+</body>
+</html>
