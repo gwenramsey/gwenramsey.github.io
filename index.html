@@ -188,6 +188,25 @@ a[href="manzanita-mapping.html"] img {
   letter-spacing:.12em;
   text-transform:uppercase;
 }
+/* Paste this at the very bottom of the existing <style> section in index.html, immediately before </style>. */
+.map-archive { padding:88px 0; background:#e8eee9; }
+.map-archive h2 { margin:10px 0 38px; }
+.map-carousel { display:grid; grid-template-columns:54px minmax(0, 1fr) 54px; align-items:center; gap:18px; }
+.map-slide { margin:0; min-width:0; }
+.map-image-button { display:block; width:100%; padding:0; border:1px solid var(--line); background:#fff; cursor:zoom-in; overflow:hidden; }
+.map-carousel-image { display:block; width:100%; height:520px; object-fit:contain; background:#fff; transition:transform .35s ease; }
+.map-image-button:hover .map-carousel-image { transform:scale(1.015); }
+.map-slide figcaption { display:flex; justify-content:space-between; gap:16px; padding-top:11px; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
+.map-count { color:#657069; white-space:nowrap; }
+.map-arrow { width:54px; height:54px; padding:0; border:1px solid var(--ink); border-radius:50%; background:transparent; color:var(--ink); cursor:pointer; font-size:1.45rem; transition:background .2s ease,color .2s ease; }
+.map-arrow:hover { background:var(--ink); color:var(--paper); }
+.map-hint { margin:14px 0 0; color:#657069; font-size:.82rem; }
+.map-lightbox { display:none; position:fixed; z-index:20; inset:0; padding:40px; background:rgba(10,18,15,.9); align-items:center; justify-content:center; cursor:zoom-out; }
+.map-lightbox.is-open { display:flex; }
+.map-lightbox-image { display:block; max-width:min(1200px, 92vw); max-height:82vh; object-fit:contain; background:#fff; cursor:default; }
+.map-lightbox-close { position:absolute; top:20px; right:24px; border:0; background:transparent; color:#fff; font-size:2.4rem; line-height:1; cursor:pointer; }
+.map-lightbox-caption { position:absolute; bottom:12px; color:#fff; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
+@media(max-width:760px) { .map-archive { padding:68px 0; } .map-carousel { grid-template-columns:40px minmax(0,1fr) 40px; gap:8px; } .map-arrow { width:40px; height:40px; font-size:1.1rem; } .map-carousel-image { height:300px; } .map-lightbox { padding:20px; } .map-lightbox-image { max-width:95vw; max-height:80vh; } }
 
   </style>
 </head>
@@ -214,6 +233,30 @@ a[href="manzanita-mapping.html"] img {
       </div>
     </div>
   </section>
+<!-- Paste this block immediately AFTER your About section and BEFORE the next section in index.html. -->
+<section class="map-archive" id="map-archive">
+  <div class="wrap">
+    <div class="section-label">Map archive</div>
+    <h2>Other maps.</h2>
+    <div class="map-carousel" aria-label="Map gallery">
+      <button class="map-arrow map-prev" type="button" aria-label="Previous map">←</button>
+      <figure class="map-slide">
+        <button class="map-image-button" type="button" aria-label="Expand map">
+          <img class="map-carousel-image" src="assets/hayman-fire-dnbr.jpg" alt="Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.">
+        </button>
+        <figcaption><span class="map-caption">Hayman Fire burn severity · Colorado</span><span class="map-count">01 / 13</span></figcaption>
+      </figure>
+      <button class="map-arrow map-next" type="button" aria-label="Next map">→</button>
+    </div>
+    <p class="map-hint">Click a map to expand.</p>
+  </div>
+</section>
+
+<div class="map-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded map">
+  <button class="map-lightbox-close" type="button" aria-label="Close expanded map">×</button>
+  <img class="map-lightbox-image" src="" alt="">
+  <p class="map-lightbox-caption"></p>
+</div>
 
   <main id="work">
     <section>
@@ -321,5 +364,73 @@ a[href="manzanita-mapping.html"] img {
     </div>
   </section>
   <footer><div class="wrap">© 2026 Gwen Ramsey · GIS & environmental research</div></footer>
+<!-- Paste this right before the closing </body> tag in index.html. -->
+<script>
+  const maps = [
+    { src:'assets/hayman-fire-dnbr.jpg', alt:'Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.', caption:'Hayman Fire burn severity · Colorado' },
+    { src:'assets/sf-harbor-defenses.jpg', alt:'Map of batteries and Nike missile sites in San Francisco Harbor.', caption:'San Francisco Harbor defenses' },
+    { src:'assets/california-fire-ems-income.jpg', alt:'Map relating Fire and EMS services to median income in California counties.', caption:'Fire and EMS services · California' },
+    { src:'assets/colorado-river-water-use.jpg', alt:'Map of urban areas and agricultural water use in the Colorado River Basin.', caption:'Agricultural water use · Colorado River Basin' },
+    { src:'assets/california-condor-lead.jpg', alt:'Map of positive lead instances and California condor habitat.', caption:'California condor lead exposure and habitat' },
+    { src:'assets/slo-topographic-map.jpg', alt:'Topographic map of San Luis Obispo, California.', caption:'San Luis Obispo topography' },
+    { src:'assets/colorado-river-recreation.jpg', alt:'Map of recreation types across the Colorado River Basin.', caption:'Recreation · Colorado River Basin' },
+    { src:'assets/santa-rosa-fire-impacts.jpg', alt:'Map of Santa Rosa Island fire impacts on fox and skunk habitat suitability.', caption:'Santa Rosa Island fire impacts' },
+    { src:'assets/swanton-land-use.jpg', alt:'Map of land-use types at Swanton Pacific Ranch.', caption:'Swanton Pacific Ranch land use' },
+    { src:'assets/poly-canyon-slopes.jpg', alt:'Map analyzing slopes in Poly Canyon watersheds.', caption:'Poly Canyon watershed slopes' },
+    { src:'assets/tribal-water-allocation.jpg', alt:'Map of Tribal Nations water allocation from the Colorado River based on land area.', caption:'Tribal Nations water allocation' },
+    { src:'assets/swanson-land-use-soil.jpg', alt:'Map of land use and soil type at Swanson Pacific Ranch.', caption:'Swanson Pacific Ranch land use and soils' },
+    { src:'assets/slo-wells-land-use.jpg', alt:'Map of well type and land use in San Luis Obispo County.', caption:'San Luis Obispo County wells and land use' }
+  ];
+
+  const carousel = document.querySelector('.map-carousel');
+  const image = document.querySelector('.map-carousel-image');
+  const caption = document.querySelector('.map-caption');
+  const count = document.querySelector('.map-count');
+  const previous = document.querySelector('.map-prev');
+  const next = document.querySelector('.map-next');
+  const imageButton = document.querySelector('.map-image-button');
+  const lightbox = document.querySelector('.map-lightbox');
+  const lightboxImage = document.querySelector('.map-lightbox-image');
+  const lightboxCaption = document.querySelector('.map-lightbox-caption');
+  const closeLightbox = document.querySelector('.map-lightbox-close');
+  let currentMap = 0;
+  let timer;
+
+  function renderMap(index) {
+    const map = maps[index];
+    image.src = map.src;
+    image.alt = map.alt;
+    caption.textContent = map.caption;
+    count.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(maps.length).padStart(2, '0');
+  }
+  function goToMap(change) {
+    currentMap = (currentMap + change + maps.length) % maps.length;
+    renderMap(currentMap);
+  }
+  function restartTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goToMap(1), 6500);
+  }
+
+  previous.addEventListener('click', () => { goToMap(-1); restartTimer(); });
+  next.addEventListener('click', () => { goToMap(1); restartTimer(); });
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', restartTimer);
+  imageButton.addEventListener('click', () => {
+    const map = maps[currentMap];
+    lightboxImage.src = map.src;
+    lightboxImage.alt = map.alt;
+    lightboxCaption.textContent = map.caption;
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  });
+  function hideLightbox() { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); }
+  closeLightbox.addEventListener('click', hideLightbox);
+  lightbox.addEventListener('click', (event) => { if (event.target === lightbox) hideLightbox(); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideLightbox(); });
+  renderMap(currentMap);
+  restartTimer();
+</script>
+
 </body>
 </html>
