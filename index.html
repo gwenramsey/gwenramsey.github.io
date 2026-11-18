@@ -210,15 +210,18 @@ a[href="manzanita-mapping.html"] img {
 .map-lightbox-close { position:absolute; top:20px; right:24px; border:0; background:transparent; color:#fff; font-size:2.4rem; line-height:1; cursor:pointer; }
 .map-lightbox-caption { position:absolute; bottom:12px; color:#fff; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
 @media(max-width:760px) { .map-archive { padding:48px 0; } .map-carousel { grid-template-columns:34px minmax(0,1fr) 34px; gap:8px; } .map-track { gap:0; } .map-thumb { flex-basis:100%; } .map-thumb img { height:230px; } .map-arrow { width:34px; height:34px; font-size:1rem; } .map-dots { margin-left:42px; } .map-lightbox { padding:20px; } .map-lightbox-image { max-width:95vw; max-height:80vh; } }
-/* Keep the featured eelgrass card the same height as the other project cards */
+/* Eelgrass card: keep its map contained without overlapping the next card */
 .featured-research {
-  height: 370px;
+  height: auto;
 }
 
 .featured-research img {
-  height: 100%;
+  width: 100%;
+  height: auto;
   min-height: 0;
+  aspect-ratio: 1.6 / 1;
   object-fit: contain;
+  background: #dce7df;
 }
 
 .more-projects .project-card + .project-card {
