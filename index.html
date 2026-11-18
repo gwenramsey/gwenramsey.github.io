@@ -258,6 +258,33 @@ a[href="manzanita-mapping.html"] img {
     .project-grid {
   margin-top: 28px;
 }
+    /* Sticky navigation correction */
+.hero {
+  overflow: visible;
+}
+
+.hero > nav.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 14px max(32px, calc((100vw - 1160px) / 2));
+  background: rgba(247, 245, 239, .72);
+  color: var(--ink);
+  box-shadow: 0 1px 0 rgba(21, 34, 30, .12);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 760px) {
+  .hero > nav.wrap {
+    padding: 14px 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+}
   </style>
 </head>
 <body>
