@@ -236,77 +236,26 @@ a[href="manzanita-mapping.html"] img {
       </div>
     </div>
   </section>
-<!-- Paste this right before the closing </body> tag in index.html. -->
-<script>
- <!-- Replace the old map-gallery JavaScript with this. Paste it right before the closing </body> tag in index.html. -->
-<script>
-  const maps = [
-    { src:'assets/hayman-fire-dnbr.jpg', alt:'Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.', caption:'Hayman Fire burn severity · Colorado' },
-    { src:'assets/sf-harbor-defenses.jpg', alt:'Map of batteries and Nike missile sites in San Francisco Harbor.', caption:'San Francisco Harbor defenses' },
-    { src:'assets/california-fire-ems-income.jpg', alt:'Map relating Fire and EMS services to median income in California counties.', caption:'Fire and EMS services · California' },
-    { src:'assets/colorado-river-water-use.jpg', alt:'Map of urban areas and agricultural water use in the Colorado River Basin.', caption:'Agricultural water use · Colorado River Basin' },
-    { src:'assets/california-condor-lead.jpg', alt:'Map of positive lead instances and California condor habitat.', caption:'California condor lead exposure and habitat' },
-    { src:'assets/slo-topographic-map.jpg', alt:'Topographic map of San Luis Obispo, California.', caption:'San Luis Obispo topography' },
-    { src:'assets/colorado-river-recreation.jpg', alt:'Map of recreation types across the Colorado River Basin.', caption:'Recreation · Colorado River Basin' },
-    { src:'assets/santa-rosa-fire-impacts.jpg', alt:'Map of Santa Rosa Island fire impacts on fox and skunk habitat suitability.', caption:'Santa Rosa Island fire impacts' },
-    { src:'assets/swanton-land-use.jpg', alt:'Map of land-use types at Swanton Pacific Ranch.', caption:'Swanton Pacific Ranch land use' },
-    { src:'assets/poly-canyon-slopes.jpg', alt:'Map analyzing slopes in Poly Canyon watersheds.', caption:'Poly Canyon watershed slopes' },
-    { src:'assets/tribal-water-allocation.jpg', alt:'Map of Tribal Nations water allocation from the Colorado River based on land area.', caption:'Tribal Nations water allocation' },
-    { src:'assets/swanson-land-use-soil.jpg', alt:'Map of land use and soil type at Swanson Pacific Ranch.', caption:'Swanson Pacific Ranch land use and soils' },
-    { src:'assets/slo-wells-land-use.jpg', alt:'Map of well type and land use in San Luis Obispo County.', caption:'San Luis Obispo County wells and land use' }
-  ];
+<!-- Replace your entire current Map Archive section with this block. -->
+<section class="map-archive" id="map-archive">
+  <div class="wrap">
+    <div class="section-label">Map archive</div>
+    <h2>Other maps.</h2>
+    <div class="map-carousel" aria-label="Map gallery">
+      <button class="map-arrow map-prev" type="button" aria-label="Previous maps">←</button>
+      <div class="map-viewport"><div class="map-track"></div></div>
+      <button class="map-arrow map-next" type="button" aria-label="Next maps">→</button>
+    </div>
+    <div class="map-dots" aria-label="Map gallery pages"></div>
+    <p class="map-hint">Click a map to expand.</p>
+  </div>
+</section>
 
-  const carousel = document.querySelector('.map-carousel');
-  const track = document.querySelector('.map-track');
-  const dots = document.querySelector('.map-dots');
-  const previous = document.querySelector('.map-prev');
-  const next = document.querySelector('.map-next');
-  const lightbox = document.querySelector('.map-lightbox');
-  const lightboxImage = document.querySelector('.map-lightbox-image');
-  const lightboxCaption = document.querySelector('.map-lightbox-caption');
-  const closeLightbox = document.querySelector('.map-lightbox-close');
-  let currentPage = 0;
-  let timer;
-
-  function mapsPerPage() { return window.innerWidth <= 760 ? 1 : 3; }
-  function pageCount() { return Math.ceil(maps.length / mapsPerPage()); }
-  function renderCards() {
-    track.innerHTML = maps.map((map, index) => `<button class="map-thumb" type="button" data-index="${index}" aria-label="Expand ${map.caption}"><img src="${map.src}" alt="${map.alt}"><span>${map.caption}</span></button>`).join('');
-  }
-  function renderDots() {
-    dots.innerHTML = Array.from({ length: pageCount() }, (_, index) => `<button class="map-dot${index === currentPage ? ' is-active' : ''}" type="button" data-page="${index}" aria-label="Show map group ${index + 1}"></button>`).join('');
-  }
-  function showPage(page) {
-    currentPage = (page + pageCount()) % pageCount();
-    track.style.transform = `translateX(-${currentPage * 100}%)`;
-    renderDots();
-  }
-  function restartTimer() { clearInterval(timer); timer = setInterval(() => showPage(currentPage + 1), 6500); }
-  function openMap(index) {
-    const map = maps[index];
-    lightboxImage.src = map.src;
-    lightboxImage.alt = map.alt;
-    lightboxCaption.textContent = map.caption;
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-  }
-  function hideLightbox() { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); }
-
-  renderCards();
-  renderDots();
-  previous.addEventListener('click', () => { showPage(currentPage - 1); restartTimer(); });
-  next.addEventListener('click', () => { showPage(currentPage + 1); restartTimer(); });
-  carousel.addEventListener('mouseenter', () => clearInterval(timer));
-  carousel.addEventListener('mouseleave', restartTimer);
-  track.addEventListener('click', (event) => { const card = event.target.closest('.map-thumb'); if (card) openMap(Number(card.dataset.index)); });
-  dots.addEventListener('click', (event) => { const dot = event.target.closest('.map-dot'); if (dot) { showPage(Number(dot.dataset.page)); restartTimer(); } });
-  closeLightbox.addEventListener('click', hideLightbox);
-  lightbox.addEventListener('click', (event) => { if (event.target === lightbox) hideLightbox(); });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideLightbox(); });
-  window.addEventListener('resize', () => { currentPage = 0; showPage(0); });
-  restartTimer();
-</script>
-
+<div class="map-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded map">
+  <button class="map-lightbox-close" type="button" aria-label="Close expanded map">×</button>
+  <img class="map-lightbox-image" src="" alt="">
+  <p class="map-lightbox-caption"></p>
+</div>
 
 </section>
 
@@ -422,7 +371,7 @@ a[href="manzanita-mapping.html"] img {
     </div>
   </section>
   <footer><div class="wrap">© 2026 Gwen Ramsey · GIS & environmental research</div></footer>
-<!-- Paste this right before the closing </body> tag in index.html. -->
+<!-- Replace the old map-gallery JavaScript with this. Paste it right before the closing </body> tag in index.html. -->
 <script>
   const maps = [
     { src:'assets/hayman-fire-dnbr.jpg', alt:'Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.', caption:'Hayman Fire burn severity · Colorado' },
@@ -441,52 +390,53 @@ a[href="manzanita-mapping.html"] img {
   ];
 
   const carousel = document.querySelector('.map-carousel');
-  const image = document.querySelector('.map-carousel-image');
-  const caption = document.querySelector('.map-caption');
-  const count = document.querySelector('.map-count');
+  const track = document.querySelector('.map-track');
+  const dots = document.querySelector('.map-dots');
   const previous = document.querySelector('.map-prev');
   const next = document.querySelector('.map-next');
-  const imageButton = document.querySelector('.map-image-button');
   const lightbox = document.querySelector('.map-lightbox');
   const lightboxImage = document.querySelector('.map-lightbox-image');
   const lightboxCaption = document.querySelector('.map-lightbox-caption');
   const closeLightbox = document.querySelector('.map-lightbox-close');
-  let currentMap = 0;
+  let currentPage = 0;
   let timer;
 
-  function renderMap(index) {
+  function mapsPerPage() { return window.innerWidth <= 760 ? 1 : 3; }
+  function pageCount() { return Math.ceil(maps.length / mapsPerPage()); }
+  function renderCards() {
+    track.innerHTML = maps.map((map, index) => `<button class="map-thumb" type="button" data-index="${index}" aria-label="Expand ${map.caption}"><img src="${map.src}" alt="${map.alt}"><span>${map.caption}</span></button>`).join('');
+  }
+  function renderDots() {
+    dots.innerHTML = Array.from({ length: pageCount() }, (_, index) => `<button class="map-dot${index === currentPage ? ' is-active' : ''}" type="button" data-page="${index}" aria-label="Show map group ${index + 1}"></button>`).join('');
+  }
+  function showPage(page) {
+    currentPage = (page + pageCount()) % pageCount();
+    track.style.transform = `translateX(-${currentPage * 100}%)`;
+    renderDots();
+  }
+  function restartTimer() { clearInterval(timer); timer = setInterval(() => showPage(currentPage + 1), 6500); }
+  function openMap(index) {
     const map = maps[index];
-    image.src = map.src;
-    image.alt = map.alt;
-    caption.textContent = map.caption;
-    count.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(maps.length).padStart(2, '0');
-  }
-  function goToMap(change) {
-    currentMap = (currentMap + change + maps.length) % maps.length;
-    renderMap(currentMap);
-  }
-  function restartTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goToMap(1), 6500);
-  }
-
-  previous.addEventListener('click', () => { goToMap(-1); restartTimer(); });
-  next.addEventListener('click', () => { goToMap(1); restartTimer(); });
-  carousel.addEventListener('mouseenter', () => clearInterval(timer));
-  carousel.addEventListener('mouseleave', restartTimer);
-  imageButton.addEventListener('click', () => {
-    const map = maps[currentMap];
     lightboxImage.src = map.src;
     lightboxImage.alt = map.alt;
     lightboxCaption.textContent = map.caption;
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
-  });
+  }
   function hideLightbox() { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); }
+
+  renderCards();
+  renderDots();
+  previous.addEventListener('click', () => { showPage(currentPage - 1); restartTimer(); });
+  next.addEventListener('click', () => { showPage(currentPage + 1); restartTimer(); });
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', restartTimer);
+  track.addEventListener('click', (event) => { const card = event.target.closest('.map-thumb'); if (card) openMap(Number(card.dataset.index)); });
+  dots.addEventListener('click', (event) => { const dot = event.target.closest('.map-dot'); if (dot) { showPage(Number(dot.dataset.page)); restartTimer(); } });
   closeLightbox.addEventListener('click', hideLightbox);
   lightbox.addEventListener('click', (event) => { if (event.target === lightbox) hideLightbox(); });
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideLightbox(); });
-  renderMap(currentMap);
+  window.addEventListener('resize', () => { currentPage = 0; showPage(0); });
   restartTimer();
 </script>
 
