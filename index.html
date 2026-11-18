@@ -191,22 +191,25 @@ a[href="manzanita-mapping.html"] img {
 /* Replace the entire OLD map-gallery CSS block with this block. */
 .map-archive { padding:54px 0; background:#e8eee9; overflow:hidden; }
 .map-archive h2 { margin:8px 0 22px; font-family:Georgia, 'Times New Roman', serif; font-size:clamp(2.2rem, 4vw, 3.3rem); line-height:.95; font-weight:400; letter-spacing:-.045em; }
-.map-carousel { display:grid; grid-template-columns:42px minmax(0, 720px) 42px; align-items:center; gap:12px; width:100%; max-width:820px; }
-.map-slide { margin:0; min-width:0; width:100%; }
-.map-image-button { display:block; width:100%; padding:0; border:1px solid var(--line); background:#fff; cursor:zoom-in; overflow:hidden; }
-.map-carousel-image { display:block; width:100%; height:310px; object-fit:contain; background:#fff; transition:transform .35s ease; }
-.map-image-button:hover .map-carousel-image { transform:scale(1.015); }
-.map-slide figcaption { display:flex; justify-content:space-between; gap:16px; padding-top:11px; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
-.map-count { color:#657069; white-space:nowrap; }
+.map-carousel { display:grid; grid-template-columns:42px minmax(0, 1fr) 42px; align-items:center; gap:12px; width:100%; }
+.map-viewport { overflow:hidden; min-width:0; }
+.map-track { display:flex; gap:16px; transition:transform .45s ease; }
+.map-thumb { flex:0 0 calc((100% - 32px) / 3); min-width:0; padding:0; border:1px solid var(--line); background:#fff; text-align:left; cursor:zoom-in; overflow:hidden; }
+.map-thumb img { display:block; width:100%; height:180px; object-fit:cover; background:#fff; transition:transform .3s ease; }
+.map-thumb:hover img { transform:scale(1.035); }
+.map-thumb span { display:block; min-height:44px; padding:9px 10px; font-size:.69rem; font-weight:700; letter-spacing:.045em; line-height:1.25; text-transform:uppercase; }
 .map-arrow { width:42px; height:42px; padding:0; border:1px solid var(--ink); border-radius:50%; background:transparent; color:var(--ink); cursor:pointer; font-size:1.2rem; transition:background .2s ease,color .2s ease; }
 .map-arrow:hover { background:var(--ink); color:var(--paper); }
-.map-hint { margin:14px 0 0; color:#657069; font-size:.82rem; }
+.map-dots { display:flex; gap:7px; margin:18px 0 0 54px; }
+.map-dot { width:7px; height:7px; padding:0; border:0; border-radius:50%; background:#9fa99f; cursor:pointer; }
+.map-dot.is-active { background:var(--ink); }
+.map-hint { margin:10px 0 0; color:#657069; font-size:.82rem; }
 .map-lightbox { display:none; position:fixed; z-index:20; inset:0; padding:40px; background:rgba(10,18,15,.9); align-items:center; justify-content:center; cursor:zoom-out; }
 .map-lightbox.is-open { display:flex; }
 .map-lightbox-image { display:block; max-width:min(1200px, 92vw); max-height:82vh; object-fit:contain; background:#fff; cursor:default; }
 .map-lightbox-close { position:absolute; top:20px; right:24px; border:0; background:transparent; color:#fff; font-size:2.4rem; line-height:1; cursor:pointer; }
 .map-lightbox-caption { position:absolute; bottom:12px; color:#fff; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
-@media(max-width:760px) { .map-archive { padding:48px 0; } .map-carousel { grid-template-columns:34px minmax(0,1fr) 34px; gap:8px; } .map-arrow { width:34px; height:34px; font-size:1rem; } .map-carousel-image { height:230px; } .map-lightbox { padding:20px; } .map-lightbox-image { max-width:95vw; max-height:80vh; } }
+@media(max-width:760px) { .map-archive { padding:48px 0; } .map-carousel { grid-template-columns:34px minmax(0,1fr) 34px; gap:8px; } .map-track { gap:0; } .map-thumb { flex-basis:100%; } .map-thumb img { height:230px; } .map-arrow { width:34px; height:34px; font-size:1rem; } .map-dots { margin-left:42px; } .map-lightbox { padding:20px; } .map-lightbox-image { max-width:95vw; max-height:80vh; } }
 
   </style>
 </head>
@@ -233,23 +236,78 @@ a[href="manzanita-mapping.html"] img {
       </div>
     </div>
   </section>
-<!-- Paste this block immediately AFTER your About section and BEFORE the next section in index.html. -->
-<section class="map-archive" id="map-archive">
-  <div class="wrap">
-    <div class="section-label">Map archive</div>
-    <h2>Other maps.</h2>
-    <div class="map-carousel" aria-label="Map gallery">
-      <button class="map-arrow map-prev" type="button" aria-label="Previous map">←</button>
-      <figure class="map-slide">
-        <button class="map-image-button" type="button" aria-label="Expand map">
-          <img class="map-carousel-image" src="assets/hayman-fire-dnbr.jpg" alt="Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.">
-        </button>
-        <figcaption><span class="map-caption">Hayman Fire burn severity · Colorado</span><span class="map-count">01 / 13</span></figcaption>
-      </figure>
-      <button class="map-arrow map-next" type="button" aria-label="Next map">→</button>
-    </div>
-    <p class="map-hint">Click a map to expand.</p>
-  </div>
+<!-- Paste this right before the closing </body> tag in index.html. -->
+<script>
+ <!-- Replace the old map-gallery JavaScript with this. Paste it right before the closing </body> tag in index.html. -->
+<script>
+  const maps = [
+    { src:'assets/hayman-fire-dnbr.jpg', alt:'Difference Normalized Burn Ratio map for the Hayman Fire in Colorado.', caption:'Hayman Fire burn severity · Colorado' },
+    { src:'assets/sf-harbor-defenses.jpg', alt:'Map of batteries and Nike missile sites in San Francisco Harbor.', caption:'San Francisco Harbor defenses' },
+    { src:'assets/california-fire-ems-income.jpg', alt:'Map relating Fire and EMS services to median income in California counties.', caption:'Fire and EMS services · California' },
+    { src:'assets/colorado-river-water-use.jpg', alt:'Map of urban areas and agricultural water use in the Colorado River Basin.', caption:'Agricultural water use · Colorado River Basin' },
+    { src:'assets/california-condor-lead.jpg', alt:'Map of positive lead instances and California condor habitat.', caption:'California condor lead exposure and habitat' },
+    { src:'assets/slo-topographic-map.jpg', alt:'Topographic map of San Luis Obispo, California.', caption:'San Luis Obispo topography' },
+    { src:'assets/colorado-river-recreation.jpg', alt:'Map of recreation types across the Colorado River Basin.', caption:'Recreation · Colorado River Basin' },
+    { src:'assets/santa-rosa-fire-impacts.jpg', alt:'Map of Santa Rosa Island fire impacts on fox and skunk habitat suitability.', caption:'Santa Rosa Island fire impacts' },
+    { src:'assets/swanton-land-use.jpg', alt:'Map of land-use types at Swanton Pacific Ranch.', caption:'Swanton Pacific Ranch land use' },
+    { src:'assets/poly-canyon-slopes.jpg', alt:'Map analyzing slopes in Poly Canyon watersheds.', caption:'Poly Canyon watershed slopes' },
+    { src:'assets/tribal-water-allocation.jpg', alt:'Map of Tribal Nations water allocation from the Colorado River based on land area.', caption:'Tribal Nations water allocation' },
+    { src:'assets/swanson-land-use-soil.jpg', alt:'Map of land use and soil type at Swanson Pacific Ranch.', caption:'Swanson Pacific Ranch land use and soils' },
+    { src:'assets/slo-wells-land-use.jpg', alt:'Map of well type and land use in San Luis Obispo County.', caption:'San Luis Obispo County wells and land use' }
+  ];
+
+  const carousel = document.querySelector('.map-carousel');
+  const track = document.querySelector('.map-track');
+  const dots = document.querySelector('.map-dots');
+  const previous = document.querySelector('.map-prev');
+  const next = document.querySelector('.map-next');
+  const lightbox = document.querySelector('.map-lightbox');
+  const lightboxImage = document.querySelector('.map-lightbox-image');
+  const lightboxCaption = document.querySelector('.map-lightbox-caption');
+  const closeLightbox = document.querySelector('.map-lightbox-close');
+  let currentPage = 0;
+  let timer;
+
+  function mapsPerPage() { return window.innerWidth <= 760 ? 1 : 3; }
+  function pageCount() { return Math.ceil(maps.length / mapsPerPage()); }
+  function renderCards() {
+    track.innerHTML = maps.map((map, index) => `<button class="map-thumb" type="button" data-index="${index}" aria-label="Expand ${map.caption}"><img src="${map.src}" alt="${map.alt}"><span>${map.caption}</span></button>`).join('');
+  }
+  function renderDots() {
+    dots.innerHTML = Array.from({ length: pageCount() }, (_, index) => `<button class="map-dot${index === currentPage ? ' is-active' : ''}" type="button" data-page="${index}" aria-label="Show map group ${index + 1}"></button>`).join('');
+  }
+  function showPage(page) {
+    currentPage = (page + pageCount()) % pageCount();
+    track.style.transform = `translateX(-${currentPage * 100}%)`;
+    renderDots();
+  }
+  function restartTimer() { clearInterval(timer); timer = setInterval(() => showPage(currentPage + 1), 6500); }
+  function openMap(index) {
+    const map = maps[index];
+    lightboxImage.src = map.src;
+    lightboxImage.alt = map.alt;
+    lightboxCaption.textContent = map.caption;
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+  function hideLightbox() { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); }
+
+  renderCards();
+  renderDots();
+  previous.addEventListener('click', () => { showPage(currentPage - 1); restartTimer(); });
+  next.addEventListener('click', () => { showPage(currentPage + 1); restartTimer(); });
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', restartTimer);
+  track.addEventListener('click', (event) => { const card = event.target.closest('.map-thumb'); if (card) openMap(Number(card.dataset.index)); });
+  dots.addEventListener('click', (event) => { const dot = event.target.closest('.map-dot'); if (dot) { showPage(Number(dot.dataset.page)); restartTimer(); } });
+  closeLightbox.addEventListener('click', hideLightbox);
+  lightbox.addEventListener('click', (event) => { if (event.target === lightbox) hideLightbox(); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideLightbox(); });
+  window.addEventListener('resize', () => { currentPage = 0; showPage(0); });
+  restartTimer();
+</script>
+
+
 </section>
 
 <div class="map-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded map">
