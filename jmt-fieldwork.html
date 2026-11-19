@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eastern Sierra ecological monitoring and restoration data collection with JMT Wilderness Conservancy.">
+  <title>Eastern Sierra Fieldwork | Gwen Ramsey</title>
+  <style>
+    :root { --ink:#15221e; --paper:#f7f5ef; --moss:#3f5b42; --mist:#dce7df; --clay:#b76443; --line:rgba(21,34,30,.16); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; line-height:1.5; }
+    a { color:inherit; }
+    .wrap { width:min(1120px, calc(100% - 48px)); margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; }
+    nav a { text-decoration:none; font-weight:700; }
+    nav .back { opacity:.7; font-weight:400; }
+    .hero { min-height:650px; padding:110px 0 76px; color:#fff; display:flex; align-items:flex-end; position:relative; overflow:hidden; background:linear-gradient(90deg,rgba(10,20,16,.76) 0%,rgba(10,20,16,.43) 54%,rgba(10,20,16,.1)),url('assets/jmt-sunrise.jpeg') center 62% / cover no-repeat; }
+    .hero .wrap { position:relative; }
+    .eyebrow,.section-label { font-size:.76rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .section-label { color:var(--clay); }
+    h1,h2,h3 { font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.05em; line-height:.95; }
+    h1 { max-width:840px; margin:18px 0 25px; font-size:clamp(3.7rem,8vw,7.1rem); }
+    .hero p { max-width:620px; margin:0; font-size:1.17rem; }
+    section { padding:92px 0; }
+    .intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:72px; }
+    h2 { margin:0; font-size:clamp(2.7rem,5.5vw,5rem); }
+    .body-copy p { margin:0 0 20px; font-size:1.08rem; }
+    .roles { margin:30px 0 0; padding:0; list-style:none; border-top:1px solid var(--line); }
+    .roles li { padding:14px 0; border-bottom:1px solid var(--line); font-size:.98rem; }
+    .roles strong { display:block; color:var(--moss); text-transform:uppercase; font-size:.74rem; letter-spacing:.09em; margin-bottom:3px; }
+    .baseline { background:var(--mist); }
+    .baseline img { display:block; width:100%; border:1px solid var(--line); margin-top:34px; }
+    .caption { margin:12px 0 0; color:#53635a; font-size:.89rem; }
+    .field-methods { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:40px; }
+    .field-method { border-top:2px solid var(--moss); padding-top:18px; }
+    .field-method h3 { margin:0 0 10px; font-size:1.8rem; }
+    .field-method p { margin:0; }
+    .gallery { background:var(--ink); color:var(--paper); }
+    .gallery-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:36px; }
+    .gallery .section-label { color:#d9c4a6; }
+    .gallery-note { max-width:360px; margin:0; color:rgba(255,255,255,.75); }
+    .photo-grid { display:grid; grid-template-columns:1.2fr .8fr .8fr; grid-auto-rows:270px; gap:16px; }
+    .photo-grid figure { margin:0; position:relative; overflow:hidden; }
+    .photo-grid figure:first-child { grid-row:span 2; }
+    .photo-grid figure:nth-child(4) { grid-column:span 2; }
+    .photo-grid img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+    .photo-grid figure:hover img { transform:scale(1.025); }
+    .photo-grid figcaption { position:absolute; left:0; right:0; bottom:0; padding:30px 14px 12px; background:linear-gradient(transparent,rgba(0,0,0,.72)); font-size:.79rem; }
+    .story { text-align:center; padding:104px 0; }
+    .story h2 { max-width:760px; margin:0 auto 22px; }
+    .story p { max-width:600px; margin:0 auto 30px; font-size:1.06rem; }
+    .button { display:inline-block; padding:14px 18px; background:var(--moss); color:white; text-decoration:none; font-weight:700; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
+    footer { padding:30px 0; font-size:.8rem; color:#53635a; border-top:1px solid var(--line); }
+    footer a { font-weight:700; }
+    @media(max-width:760px) { .wrap { width:min(100% - 32px,1120px); } .hero { min-height:530px; padding:72px 0 56px; background-position:center; } section { padding:68px 0; } .intro,.field-methods { grid-template-columns:1fr; gap:32px; } .gallery-head { display:block; } .gallery-note { margin-top:16px; } .photo-grid { grid-template-columns:1fr 1fr; grid-auto-rows:220px; } .photo-grid figure:first-child { grid-row:auto; grid-column:span 2; } .photo-grid figure:nth-child(4) { grid-column:span 2; } }
+  </style>
+</head>
+<body>
+  <div class="wrap"><nav><a href="index.html">Gwen Ramsey</a><a class="back" href="index.html#approach">← Fieldwork</a></nav></div>
+  <header class="hero"><div class="wrap"><div class="eyebrow">JMT Wilderness Conservancy · Eastern Sierra Nevada · 2025–2026</div><h1>Restoration monitoring in the Eastern Sierra.</h1><p>Collecting meadow, trail, and campsite data to establish useful baselines for stewardship and future restoration work along the John Muir Trail.</p></div></header>
+  <main>
+    <section><div class="wrap intro"><div><div class="section-label">Project overview</div><h2>Two seasons of field-based monitoring.</h2></div><div class="body-copy"><p>With JMT Wilderness Conservancy, I worked across the Eastern Sierra to collect ecological and restoration-monitoring data in alpine and subalpine landscapes. The work supported baseline assessments of meadow condition, trail and campsite impacts, channel features, and vegetation change.</p><p>Field data were collected with ArcGIS Field Maps and Survey123, Trimble GNSS receivers, transects, quadrats, tape measures, and repeatable observation protocols. These records provide a spatially organized baseline that can inform future restoration crews and long-term stewardship decisions.</p><ul class="roles"><li><strong>Summer 2025</strong>Ecological Monitoring Technician</li><li><strong>Summer 2026</strong>Eastside Project Coordinator — coordinated the two Eastside field teams pictured in the 2026 field gallery.</li></ul></div></div></section>
+    <section class="baseline"><div class="wrap"><div class="section-label">From field to map</div><h2>Baseline data for future restoration.</h2><img src="assets/jmt-meadow-baseline.jpg" alt="ArcGIS Online map showing meadow extent, transects, channels, and restoration observations collected during a meadow baseline survey."><p class="caption">Meadow baseline survey displayed in ArcGIS Online. Monitoring data © <a href="https://jmtwilderness.org/" target="_blank" rel="noreferrer">JMT Wilderness Conservancy</a>.</p></div></section>
+    <section><div class="wrap"><div class="section-label">Field methods</div><h2>Repeatable observations across a changing landscape.</h2><div class="field-methods"><div class="field-method"><h3>Meadow monitoring</h3><p>Documenting meadow extent, hydrology, vegetation, erosion features, and other observations to establish an ecological baseline.</p></div><div class="field-method"><h3>Trail & campsite assessment</h3><p>Recording trail and campsite condition to support restoration priorities and help monitor the effects of use over time.</p></div><div class="field-method"><h3>Spatial data collection</h3><p>Using Field Maps, Survey123, Trimble GNSS, transects, quadrats, and tape measures to create consistent field records.</p></div></div></div></section>
+    <section class="gallery"><div class="wrap"><div class="gallery-head"><div><div class="section-label">In the field</div><h2>Eastern Sierra field seasons.</h2></div><p class="gallery-note">2025: Ecological Monitoring Technician. 2026: Eastside Project Coordinator. All monitoring data credited to JMT Wilderness Conservancy.</p></div><div class="photo-grid"><figure><img src="assets/jmt-rock-creek.jpeg" alt="Field crew conducting meadow monitoring in Rock Creek Meadows in 2026."><figcaption>Meadow monitoring at Rock Creek Meadows · 2026</figcaption></figure><figure><img src="assets/jmt-meadow-survey.jpeg" alt="Field technician working with a GNSS receiver in a meadow in 2026."><figcaption>GNSS data collection · 2026</figcaption></figure><figure><img src="assets/jmt-transect.jpeg" alt="Field technicians conducting a meadow transect in 2026."><figcaption>Meadow transect · 2026</figcaption></figure><figure><img src="assets/jmt-eastside-teams.jpeg" alt="Two Eastside JMT Wilderness Conservancy field teams during the 2026 season."><figcaption>Eastside field teams · 2026</figcaption></figure><figure><img src="assets/jmt-whitney-crew-2025.JPG" alt="JMT Wilderness Conservancy crew on Mount Whitney in 2025."><figcaption>Field crew on Mount Whitney · 2025</figcaption></figure><figure><img src="assets/jmt-field-camp-2025.jpeg" alt="Field camp beneath boulders in the Eastern Sierra in 2025."><figcaption>Backcountry field camp · 2025</figcaption></figure></div></div></section>
+    <section class="story"><div class="wrap"><div class="section-label">More fieldwork</div><h2>Explore the fieldwork StoryMap.</h2><p>A closer look at JMT Wilderness Conservancy restoration-monitoring work, methods, and field landscapes.</p><a class="button" href="https://storymaps.arcgis.com/stories/c0b6d7147deb45bf87b7b355c2103817" target="_blank" rel="noreferrer">Open StoryMap ↗</a></div></section>
+  </main>
+  <footer><div class="wrap">Fieldwork and monitoring data © <a href="https://jmtwilderness.org/" target="_blank" rel="noreferrer">JMT Wilderness Conservancy</a> · 2025–2026 · <a href="index.html">Return to portfolio</a></div></footer>
+</body>
+</html>
