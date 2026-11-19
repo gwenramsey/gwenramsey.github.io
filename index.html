@@ -91,54 +91,38 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 42px 28px;
-  padding-top: 84px;
-}
-
+  padding-top: 84px;}
 .forecast-stack {
   display: grid;
-  gap: 28px;
-}
-
+  gap: 28px;}
 .field-pair {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-
+  gap: 28px;}
 .field-pair video {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border: 1px solid var(--line);
-  background: #e9ece7;
-}
-
+  background: #e9ece7;}
 @media (max-width: 760px) {
   .ci-gallery,
   .field-pair {
-    grid-template-columns: 1fr;
-  }
-
+    grid-template-columns: 1fr; }
   .field-pair {
-    grid-column: auto;
-  }
-}
+    grid-column: auto;  }}
   .more-projects {
   padding: 112px 0;
-  background: #f7f5ef;
-}
-
+  background: #f7f5ef;}
 .more-projects h2 {
   margin: 12px 0 42px;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(2.7rem, 5vw, 4.6rem);
   line-height: .95;
   letter-spacing: -.05em;
-  font-weight: 400;
-}
-
+  font-weight: 400;}
 .project-card {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -273,28 +257,31 @@ a[href="manzanita-mapping.html"] img {
   background: rgba(247, 245, 239, .72);
   color: var(--ink);
   box-shadow: 0 1px 0 rgba(21, 34, 30, .12);
-  backdrop-filter: blur(10px);
-}
-
+  backdrop-filter: blur(10px);}
 @media (max-width: 760px) {
   .hero > nav.wrap {
-    padding: 14px 16px;
-  }
-
+    padding: 14px 16px;}
   .nav-links {
-    gap: 14px;
-  }
-}
+    gap: 14px; }}
     .hero > .wrap#top {
-  transform: translateY(50px);
-}
+  transform: translateY(50px);}
+    /* Show Field Work after Other Projects */
+main {
+  display: flex;
+  flex-direction: column;}
+main > section:not(.methods):not(.more-projects) {
+  order: 1;}
+.more-projects {
+  order: 2;}
+.methods {
+  order: 3;}
   </style>
 </head>
 <body>
   <header class="hero">
     <nav class="wrap">
       <a class="brand" href="#top">Gwen Ramsey</a>
-      <div class="nav-links"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Connect</a></div>
+      <div class="nav-links"><a href="#work">Work</a><a href="#approach">Fieldwork</a><a href="#contact">Connect</a></div>
     </nav>
     <div class="wrap" id="top">
       <div class="eyebrow">GIS · Remote sensing · Environmental research</div>
@@ -397,7 +384,7 @@ a[href="manzanita-mapping.html"] img {
 
     <section class="methods" id="approach">
       <div class="wrap method-grid">
-        <div><div class="section-label">Approach</div><h2>Spatial work grounded in place.</h2></div>
+        <div><div class="section-label">Fieldwork</div><h2>Spatial work grounded in place.</h2></div>
         <div class="method-list">
           <div class="method"><strong>01 · Field</strong><p>Collecting and interpreting observations with attention to local ecology, terrain, and the practical realities behind a dataset.</p></div>
           <div class="method"><strong>02 · Analyze</strong><p>Using GIS, remote sensing, and spatial modeling to turn complex environmental patterns into defensible findings.</p></div>
