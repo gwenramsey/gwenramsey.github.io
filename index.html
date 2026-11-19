@@ -275,6 +275,27 @@ main > section:not(.methods):not(.more-projects) {
   order: 2;}
 .methods {
   order: 3;}
+
+/* Fieldwork cards */
+.fieldwork { background:var(--mist); }
+.fieldwork-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:38px; }
+.fieldwork-heading h2 { max-width:650px; }
+.fieldwork-heading p { max-width:350px; margin:0; color:#46564d; }
+.fieldwork-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.fieldwork-card { min-height:500px; position:relative; overflow:hidden; display:flex; align-items:flex-end; color:#fff; text-decoration:none; border:1px solid rgba(21,34,30,.22); isolation:isolate; }
+.fieldwork-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .45s ease; z-index:-2; }
+.fieldwork-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,19,14,.05) 25%, rgba(7,19,14,.85) 100%); z-index:-1; }
+.fieldwork-card:hover img { transform:scale(1.035); }
+.fieldwork-card-copy { padding:34px; max-width:500px; }
+.fieldwork-card .section-label { color:#f3c69a; }
+.fieldwork-card h3 { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(2.3rem,4vw,3.9rem); line-height:.94; letter-spacing:-.05em; font-weight:400; margin:12px 0 16px; }
+.fieldwork-card p { margin:0; font-size:1.02rem; }
+.fieldwork-link { display:inline-block; margin-top:26px; padding-bottom:5px; border-bottom:1px solid rgba(255,255,255,.8); font-size:.82rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+.fieldwork-card.coming-soon { min-height:500px; align-items:flex-start; background:var(--moss); }
+.fieldwork-card.coming-soon::after { background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(9,30,20,.05)); }
+.fieldwork-card.coming-soon .fieldwork-card-copy { padding-top:34px; }
+.fieldwork-card.coming-soon p { max-width:300px; }
+@media(max-width:760px) { .fieldwork-heading { display:block; } .fieldwork-heading p { margin-top:18px; } .fieldwork-grid { grid-template-columns:1fr; } .fieldwork-card, .fieldwork-card.coming-soon { min-height:440px; } .fieldwork-card-copy { padding:26px; } }
   </style>
 </head>
 <body>
@@ -382,13 +403,29 @@ main > section:not(.methods):not(.more-projects) {
 </div>
     </section>
 
-    <section class="methods" id="approach">
-      <div class="wrap method-grid">
-        <div><div class="section-label">Fieldwork</div><h2>Spatial work grounded in place.</h2></div>
-        <div class="method-list">
-          <div class="method"><strong>01 · Field</strong><p>Collecting and interpreting observations with attention to local ecology, terrain, and the practical realities behind a dataset.</p></div>
-          <div class="method"><strong>02 · Analyze</strong><p>Using GIS, remote sensing, and spatial modeling to turn complex environmental patterns into defensible findings.</p></div>
-          <div class="method"><strong>03 · Communicate</strong><p>Designing maps and visuals that make research legible to collaborators, decision-makers, and broader audiences.</p></div>
+    <section class="methods fieldwork" id="approach">
+      <div class="wrap">
+        <div class="fieldwork-heading">
+          <div><div class="section-label">Fieldwork</div><h2>Data collection grounded in place.</h2></div>
+          <p>Field-based ecological monitoring and restoration work that connects on-the-ground observations with useful, enduring spatial records.</p>
+        </div>
+        <div class="fieldwork-grid">
+          <a class="fieldwork-card" href="jmt-fieldwork.html">
+            <img src="assets/jmt-rock-creek.jpeg" alt="JMT Wilderness Conservancy field crew conducting a meadow survey in a Sierra Nevada stream.">
+            <div class="fieldwork-card-copy">
+              <div class="section-label">JMT Wilderness Conservancy · 2025–2026</div>
+              <h3>Restoration monitoring in the Eastern Sierra.</h3>
+              <p>Meadow, trail, and campsite monitoring across two field seasons, supporting future restoration planning along the John Muir Trail.</p>
+              <span class="fieldwork-link">View fieldwork →</span>
+            </div>
+          </a>
+          <div class="fieldwork-card coming-soon" aria-label="Future fieldwork project">
+            <div class="fieldwork-card-copy">
+              <div class="section-label">Coming next</div>
+              <h3>Fieldwork in Chile.</h3>
+              <p>A future fieldwork project will be added here.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
