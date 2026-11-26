@@ -1,0 +1,142 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northern Patagonia Field Studies — Gwen Ramsey</title>
+  <style>
+    :root { --ink:#14251f; --moss:#315342; --paper:#f7f5ef; --mist:#e9efea; --clay:#b55b3b; --line:rgba(20,37,31,.22); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial, Helvetica, sans-serif; line-height:1.55; }
+    .wrap { width:min(1160px, calc(100% - 48px)); margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:24px 0; position:absolute; inset:0 0 auto; z-index:2; color:#fff; }
+    nav a { color:inherit; text-decoration:none; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .hero { min-height:78vh; color:#fff; display:flex; align-items:end; padding:130px 0 78px; background:linear-gradient(180deg,rgba(5,17,12,.06) 25%,rgba(5,17,12,.84) 100%), url('assets/IMG_4176.jpeg') center/cover no-repeat; }
+    .eyebrow,.section-label { font-size:.75rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--clay); }
+    .hero .eyebrow { color:#f2c49f; }
+    h1,h2,h3 { font-family:Georgia, 'Times New Roman', serif; font-weight:400; letter-spacing:-.045em; line-height:.96; }
+    h1 { font-size:clamp(3.5rem,8vw,7rem); max-width:760px; margin:14px 0 18px; }
+    h2 { font-size:clamp(2.5rem,5vw,4.8rem); margin:12px 0 26px; }
+    h3 { font-size:clamp(1.8rem,3vw,2.8rem); margin:0 0 14px; }
+    .hero p { max-width:630px; margin:0; font-size:1.13rem; }
+    section { padding:100px 0; }
+    .intro { background:var(--ink); color:var(--paper); }
+    .intro-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:90px; }
+    .intro .section-label { color:#f2c49f; }
+    .intro p { max-width:680px; font-size:1.2rem; }
+    .details { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .detail { padding:26px; background:var(--paper); }
+    .detail strong { display:block; margin-bottom:8px; font-size:.75rem; letter-spacing:.11em; text-transform:uppercase; color:var(--moss); }
+    .detail p { margin:0; }
+    .places { background:var(--mist); }
+    .place-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }
+    .place { padding:25px 25px 28px 0; margin:0 25px 0 0; border-bottom:1px solid var(--line); }
+    .place:nth-child(3n) { margin-right:0; }
+    .place strong { display:block; font-size:1rem; }
+    .place span { color:#4a5d52; font-size:.93rem; }
+    .gallery-intro { display:flex; justify-content:space-between; align-items:end; gap:45px; margin-bottom:34px; }
+    .gallery-intro p { max-width:390px; margin:0; }
+    .gallery { display:grid; grid-template-columns:repeat(12,1fr); gap:15px; }
+    figure { margin:0; grid-column:span 4; background:#dde6df; }
+    figure.wide { grid-column:span 8; }
+    figure.tall { grid-row:span 2; }
+    figure button { display:block; width:100%; border:0; padding:0; cursor:zoom-in; background:#dce5de; }
+    figure img { display:block; width:100%; height:300px; object-fit:cover; }
+    figure.wide img { height:400px; }
+    figure.tall img { height:615px; }
+    figcaption { padding:10px 12px 12px; font-size:.84rem; color:#45574c; }
+    .reflection { background:var(--moss); color:#fff; }
+    .reflection .section-label { color:#f2c49f; }
+    .reflection p { max-width:760px; margin:0; font-size:1.25rem; }
+    footer { padding:34px 0; background:var(--ink); color:white; font-size:.85rem; }
+    footer a { color:white; }
+    .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:30px; background:rgba(5,14,10,.94); z-index:10; cursor:zoom-out; }
+    .lightbox.open { display:flex; }
+    .lightbox img { display:block; max-width:94vw; max-height:88vh; object-fit:contain; }
+    .lightbox button { position:fixed; top:18px; right:22px; border:0; background:transparent; color:white; font-size:2.4rem; cursor:pointer; }
+    @media (max-width:760px) { .wrap { width:min(100% - 34px, 1160px); } section { padding:70px 0; } .hero { min-height:680px; } .intro-grid,.gallery-intro { display:block; } .intro-grid > * + * { margin-top:34px; } .details,.place-grid { grid-template-columns:1fr; } .place,.place:nth-child(3n) { margin-right:0; padding-right:0; } .gallery { grid-template-columns:1fr; } figure,figure.wide,figure.tall { grid-column:auto; grid-row:auto; } figure img,figure.wide img,figure.tall img { height:auto; max-height:560px; object-fit:cover; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="wrap"><a href="index.html#approach">← Fieldwork</a><a href="index.html">Gwen Ramsey</a></nav>
+    <div class="wrap">
+      <div class="eyebrow">Wildlands Studies · Winter 2025</div>
+      <h1>Ecology and conservation in Northern Patagonia.</h1>
+      <p>A six-week field-based study program across southern Chile, learning from research stations, host communities, and the landscapes that connect them.</p>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <div><div class="section-label">Patagonian Ecosystems</div><h2>Learning by living in the field.</h2></div>
+      <div><p>Through Wildlands Studies’ Patagonian Ecosystems program, I spent six weeks based around Puerto Montt, Chile, studying ecology, conservation, and culture alongside 15 students from across the United States.</p><p>Guided by Chilean evolutionary biologist <strong>Darko Cotoras, PhD</strong>, whose research specializes in spiders, our group lived at research stations and camped in the field while learning from scientists, conservation practitioners, and local hosts.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-label">Field-based study</div>
+      <h2>Connecting questions to place.</h2>
+      <div class="details">
+        <div class="detail"><strong>Research</strong><p>Collected and analyzed marine debris to study where it accumulated and how it was distributed along the coast.</p></div>
+        <div class="detail"><strong>Ecology</strong><p>Presented on local flora and fauna, including <em>Nothofagus pumilio</em> and Austrochilidae spiders; studied annual forest regrowth and vegetation recovery after volcanic disturbance.</p></div>
+        <div class="detail"><strong>Stewardship &amp; culture</strong><p>Contributed to host-site maintenance, including firewood collection and boardwalk staining, and learned traditional food practices through a community-led curanto dinner.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="places">
+    <div class="wrap">
+      <div class="section-label">Places of learning</div>
+      <h2>Across forests, coasts, volcanoes, and valleys.</h2>
+      <div class="place-grid">
+        <div class="place"><strong>Senda Darwin Biological Station</strong><span>Conservation research and temperate rainforest ecology.</span></div>
+        <div class="place"><strong>Valle Los Ulmos · Volcán Calbuco</strong><span>Volcanic disturbance, vegetation, and regrowth.</span></div>
+        <div class="place"><strong>Parque Katalapi</strong><span>Annual tree-regrowth study.</span></div>
+        <div class="place"><strong>Raíces del Viento</strong><span>Permaculture, local knowledge, and land stewardship.</span></div>
+        <div class="place"><strong>Cochamó Valley</strong><span>A nine-day backpacking journey through the valley.</span></div>
+        <div class="place"><strong>Ahuenco · Chiloé Island</strong><span>Coastal ecology and conservation.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="gallery-intro"><div><div class="section-label">Field notes</div><h2>Moments across Patagonia.</h2></div><p>Click any photograph to view it in full. The final images are from personal travel in southern Patagonia following the program.</p></div>
+      <div class="gallery">
+        <figure class="wide"><button type="button"><img src="assets/IMG_4276.jpeg" alt="Wildlands Studies group at Ahuenco Conservation Park on Chiloé Island."></button><figcaption>Ahuenco Conservation Park · Chiloé Island</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_3534.jpeg" alt="Campsite at Lago Vidal in the Cochamó Valley."></button><figcaption>Campsite at Lago Vidal · Cochamó Valley</figcaption></figure>
+        <figure><button type="button"><img src="assets/439f1c13-80f8-4f5a-b4cf-a8fbc0c23598.jpeg" alt="Students learning beside an Araucaria tree."></button><figcaption>Learning in the field</figcaption></figure>
+        <figure class="tall"><button type="button"><img src="assets/IMG_4531.jpeg" alt="Students studying vegetation on Volcán Calbuco."></button><figcaption>Volcanic terrain · Volcán Calbuco</figcaption></figure>
+        <figure><button type="button"><img src="assets/62ba4cef-a49f-4d78-83a3-9320ce60d721.jpeg" alt="Lighthouse in the town of Cochamó."></button><figcaption>Cochamó town waterfront</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_4176.jpeg" alt="Cochamó Valley landscape."></button><figcaption>Cochamó Valley</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_4234.jpeg" alt="Sign at Monte Verde archaeological site."></button><figcaption>Monte Verde archaeological site</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_4713.jpeg" alt="Entrance to Senda Darwin Biological Station."></button><figcaption>Senda Darwin Biological Station</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_3719.jpeg" alt="Darwin's beetle held in a hand."></button><figcaption>Darwin’s beetle</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_3394.jpeg" alt="Gwen holding kelp at Ahuenco Conservation Park."></button><figcaption>Coastal fieldwork · Ahuenco</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_3462.jpeg" alt="Traditional curanto dinner prepared with local guidance."></button><figcaption>Curanto dinner with local guidance</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_3945.jpeg" alt="Waterfall in southern Patagonia."></button><figcaption>Southern Patagonia</figcaption></figure>
+        <figure><button type="button"><img src="assets/IMG_4055.jpeg" alt="Gwen at Perito Moreno Glacier in southern Patagonia."></button><figcaption>Perito Moreno Glacier</figcaption></figure>
+        <figure class="wide"><button type="button"><img src="assets/IMG_4716.jpeg" alt="Perito Moreno Glacier in southern Patagonia."></button><figcaption>Perito Moreno Glacier · personal travel following the program</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reflection"><div class="wrap"><div class="section-label">Takeaway</div><h2>Conservation is a relationship with place.</h2><p>The program grounded ecological questions in the people, practices, and landscapes that shape them—an approach I continue to bring to fieldwork and environmental research.</p></div></section>
+  <footer><div class="wrap">© Gwen Ramsey · <a href="index.html">Return home</a></div></footer>
+  <div class="lightbox" id="lightbox" aria-hidden="true"><button type="button" aria-label="Close image">×</button><img src="" alt=""></div>
+  <script>
+    const lightbox = document.querySelector('#lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery figure button').forEach(button => button.addEventListener('click', () => {
+      const image = button.querySelector('img'); lightboxImage.src = image.src; lightboxImage.alt = image.alt; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden', 'false');
+    }));
+    function closeLightbox(){ lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden', 'true'); lightboxImage.src = ''; }
+    lightbox.addEventListener('click', closeLightbox); lightbox.querySelector('button').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', event => { if(event.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
